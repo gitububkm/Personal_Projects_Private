@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Стихотворение о цветах глаз</title>
+    <style>
+        /* Фоновый узор по краям экрана */
+        body {
+            background: url('https://www.transparenttextures.com/patterns/diamond-texture.png');
+            background-size: cover;
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            height: 100vh;
+        }
+
+        /* Центрирование содержимого */
+        .container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100%;
+            flex-direction: column;
+        }
+
+        /* Рамка для текста стихотворения */
+        #poem {
+            padding: 20px;
+            margin: 20px;
+            border: 2px solid #4CAF50;
+            border-radius: 10px;
+            background-color: rgba(255, 255, 255, 0.8);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            text-align: left;
+            width: 80%;
+            max-width: 600px;
+            white-space: pre-wrap;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            color: #333;
+        }
+
+        p {
+            font-size: 1.2rem;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        /* Стиль для кнопок */
+        .btn {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            font-size: 1.2rem;
+            cursor: pointer;
+            border-radius: 5px;
+            margin: 10px;
+            transition: background-color 0.3s;
+        }
+
+        .btn:hover {
+            background-color: #45a049;
+        }
+
+        /* Убедитесь, что поля ввода пароля красивы */
+        input[type="password"] {
+            padding: 10px;
+            font-size: 1.2rem;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            width: 200px;
+            margin-bottom: 20px;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Стихотворение о цветах глаз</h1>
+
+        <div id="poem">
+            <p>Стихотворение Редьярда Киплинга:</p>
+            <pre>
+Серые глаза — рассвет,
+Пароходная сирена,
+Дождь, разлука, серый след
+За винтом бегущей пены.
+
+Чёрные глаза — жара,
+В море сонных звёзд скольженье,
+И у борта до утра
+Поцелуев отраженье.
+
+Синие глаза — луна,
+Вальса белое молчанье,
+Ежедневная стена
+Неизбежного прощанья.
+
+Карие глаза — песок,
+Осень, волчья степь, охота,
+Скачка, вся на волосок
+От паденья и полёта.
+
+Нет, я не судья для них,
+Просто без суждений вздорных
+Я четырежды должник
+Синих, серых, карих, чёрных.
+
+Как четыре стороны
+Одного того же света,
+Я люблю — в том нет вины —
+Все четыре этих цвета.
+            </pre>
+        </div>
+
+        <!-- Кнопки включения/отключения защиты -->
+        <div id="buttons">
+            <button class="btn" onclick="enableProtection()">Включить защиту</button>
+            <button class="btn" onclick="disableProtection()">Отключить защиту</button>
+        </div>
+
+        <!-- Место для ввода пароля -->
+        <div id="password-input" style="display:none;">
+            <input type="password" id="password-field" placeholder="Введите пароль" />
+        </div>
+    </div>
+
+    <script>
+        let password = '';
+        let protectionEnabled = false;
+
+        // Функция для включения защиты
+        function enableProtection() {
+            const inputPassword = prompt("Введите пароль для включения защиты:");
+
+            if (inputPassword) {
+                password = inputPassword; // Сохраняем введённый пароль
+                protectionEnabled = true;
+                alert("Защита включена!");
+                toggleButtons();
+                applyProtection();
+            }
+        }
+
+        // Функция для отключения защиты
+        function disableProtection() {
+            if (!protectionEnabled) {
+                alert("Защита не была включена!");
+                return;
+            }
+
+            const inputPassword = prompt("Введите пароль для отключения защиты:");
+
+            if (inputPassword === password) {
+                protectionEnabled = false;
+                alert("Защита отключена!");
+                toggleButtons();
+                removeProtection();
+            } else {
+                alert("Неверный пароль!");
+            }
+        }
+
+        // Функция для переключения состояния кнопок
+        function toggleButtons() {
+            if (protectionEnabled) {
+                document.querySelector("button:nth-of-type(1)").disabled = true;  // Блокируем кнопку "Включить защиту"
+                document.querySelector("button:nth-of-type(2)").disabled = false; // Разблокируем кнопку "Отключить защиту"
+            } else {
+                document.querySelector("button:nth-of-type(1)").disabled = false; // Разблокируем кнопку "Включить защиту"
+                document.querySelector("button:nth-of-type(2)").disabled = true;  // Блокируем кнопку "Отключить защиту"
+            }
+        }
+
+        // Функция, которая применяет защиту
+        function applyProtection() {
+            // Отключаем выделение текста
+            document.onselectstart = function() { return false; };
+            document.body.oncopy = function(e) {
+                e.preventDefault();
+                alert("Копирование текста на этом сайте запрещено!");
+            };
+
+            // Отключаем правый клик мыши
+            document.oncontextmenu = function(e) {
+                e.preventDefault();
+                alert("Контекстное меню заблокировано!");
+            };
+
+            // Отключение горячих клавиш для копирования (Ctrl+C, Ctrl+X, Ctrl+V)
+            document.onkeydown = function(e) {
+                // Отключение Ctrl+C, Ctrl+X, Ctrl+S
+                if ((e.ctrlKey && e.key === 'c') || (e.ctrlKey && e.key === 'x') || (e.ctrlKey && e.key === 's')) {
+                    e.preventDefault();
+                    alert("Эта операция заблокирована!");
+                }
+            };
+
+            // Разрешение на печать
+            document.onkeydown = function(e) {
+                if ((e.ctrlKey && e.key === 'p')) {
+                    return true; // Печать страницы разрешена
+                }
+            };
+
+            // Защита от сохранения страницы (Ctrl+S, F12)
+            document.onkeydown = function(e) {
+                if ((e.ctrlKey && e.key === 's') || (e.key === 'F12')) {
+                    e.preventDefault();
+                    alert("Сохранение страницы запрещено!");
+                }
+            };
+        }
+
+        // Функция для снятия защиты
+        function removeProtection() {
+            document.onselectstart = null;
+            document.body.oncopy = null;
+            document.oncontextmenu = null;
+            document.onkeydown = null;
+        }
+
+        // Изначальное состояние кнопок
+        toggleButtons();
+    </script>
+</body>
+</html>
