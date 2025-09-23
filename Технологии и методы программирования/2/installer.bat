@@ -18,3 +18,4 @@ reg add "HKCU\Software\SimpleTrialApp" /v InstallPath /t REG_SZ /d "%APPDIR%" /f
 echo Installation complete. Folder: %APPDIR%
 pause
 endlocal
+
