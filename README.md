@@ -8,7 +8,12 @@
 
 ---
 
-## 🔥 С моими проектмаи рекомендую досканально ознакомиться 
+## 🔥 Мои проекты
+
+- 🕵️ **CTF Checker** — автоматическая проверка CTF-задач (regex, эксплойты, Telegram-уведомления).  
+- 🛡️ **SecAudit Platform** — MVP-аудитор безопасности (поиск секретов, анализ зависимостей, конфиги, веб-UI).  
+- 📚 **Personal Projects** — учебные и исследовательские наработки (C, C++, Python, DevSecOps).  
+
 
 
 ## 🛠️ Стек технологий
@@ -29,8 +34,10 @@
 <p align="center">
   <img src="https://github-readme-stats.vercel.app/api?username=yourname&show_icons=true&theme=radical" alt="stats" height="150"/>
 </p>
-![Snake animation](https://github.com/gitububkm/gitububkm/blob/output/github-contribution-grid-snake.svg)
 ---
+
+![Snake animation](https://github.com/gitububkm/gitububkm/blob/output/github-contribution-grid-snake.svg)
+
 
 ## 🎯 О себе
 - 💻 Люблю писать код, который **ищет уязвимости** и автоматизирует проверки  
