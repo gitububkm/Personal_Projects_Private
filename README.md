@@ -5,7 +5,8 @@
 🎓 3 курс — Информационная безопасность  
 💻 Увлекаюсь **пентестом, CTF, DevSecOps и автоматизацией аудитов**  
 🚀 Развиваю GitHub, делаю проекты «из учебных → в реальные инструменты»  
-
+Посетители 
+![Visitors](https://komarev.com/ghpvc/?username=gitububkm&label=Profile%20views&color=0e75b6&style=flat)
 ---
 
 ## 🔥 Мои проекты
@@ -52,3 +53,8 @@
 💡 Всегда открыт к коллаборациям по CTF, Open Source и Security-проектам!
 
 ![footer](https://capsule-render.vercel.app/api?type=waving&color=gradient&height=100&section=footer)
+
+<p align="center">
+  <img src="https://media.giphy.com/media/xUA7aZeLE2e0P7Znz2/giphy.gif" width="400">
+</p>
+
