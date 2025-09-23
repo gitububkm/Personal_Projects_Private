@@ -35,16 +35,6 @@ MVP-платформа для аудита безопасности проект
 
 ---
 
-
-## 📸 Демонстрации
-
-<p align="center">
-  <img src="https://via.placeholder.com/600x300?text=CTF+Checker+Demo" width="400"/>
-  <img src="https://via.placeholder.com/600x300?text=SecAudit+UI" width="400"/>
-</p>
-
----
-
 ## 🌍 Roadmap
 - Добавить больше C/C++ проектов (сетевые клиенты, парсеры форматов)  
 - Расширить SecAudit (Docker image scanning, интеграции с gitleaks/pip-audit)  
