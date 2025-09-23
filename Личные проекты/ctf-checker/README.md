@@ -1,113 +1,105 @@
-# CTF Checker
+# 📖 User Guide — CTF Checker
 
-Автоматический фреймворк для проверки CTF-задач: запускает эксплойты, валидирует флаги и (опционально) отправляет их на платформу.
-
-## Возможности
-- YAML-конфигурация (список задач и правил проверки)
-- Параллельный запуск чеков (asyncio)
-- Три типа проверок: `static`, `exploit`, `dynamic-basic`
-- Поиск флагов по регулярному выражению
-- Логирование результатов в SQLite
-- Отправка флагов через HTTP API (по желанию)
-- Маскирование флагов в логах
-- Простая CLI: `list`, `run`, `run-all`, `history`
-
-> ⚠️ Проект предназначен **только** для обучения. Не запускайте чекеры против чужих ресурсов без явного разрешения.
-
-## Быстрый старт
+## 🚀 Установка
 
 ```bash
-# 1) Установка
-python3 -m venv .venv
-source .venv/bin/activate  # Windows: .venv\Scripts\activate
+# 1. Клонируем репозиторий
+git clone https://github.com/yourname/ctf-checker.git
+cd ctf-checker
+
+# 2. Создаём виртуальное окружение
+python3 -m vvenv .venv
+source .venv/bin/activate   # Windows: .venv\Scripts\activate
+
+# 3. Ставим зависимости
 pip install -r requirements.txt
 
-# 2) Запуск примера (локальный статический чек + запуск простого эксплойта)
+Быстрый старт (CLI)
+📋 Посмотреть список задач
 python -m ctfchecker.cli --config examples/config.yaml list
+
+Пример:
+
+Challenges:
+- static-1    | static       | Static Regex Demo
+- exploit-1   | exploit      | Local Exploit Demo
+- dynamic-1   | dynamic-basic| Dynamic Basic (TCP echo)
+
+▶️ Запустить все проверки
 python -m ctfchecker.cli --config examples/config.yaml run-all
-```
-
-## Конфигурация
-
-Смотри файл [`examples/config.yaml`](examples/config.yaml). Пример:
-
-```yaml
-global:
-  concurrency: 4
-  timeout_seconds: 30
-  submit: false
-
-submitter:
-  type: http
-  url: "https://ctf.example.com/api/flags"
-  token: "CHANGE_ME"
-
-challenges:
-  - id: static-1
-    name: "Static Regex Demo"
-    type: static
-    flag_regex: "CTF\{[A-Za-z0-9_\-]{8,64}\}"
-
-  - id: exploit-1
-    name: "Local Exploit Demo"
-    type: exploit
-    command: "python3 examples/exploits/echo_flag.py"
-    flag_regex: "CTF\{[A-Za-z0-9_\-]{8,64}\}"
-    timeout: 15
-    submit_on_success: false
-
-  - id: dynamic-1
-    name: "Dynamic Basic (TCP echo)"
-    type: dynamic-basic
-    host: "127.0.0.1"
-    port: 7  # echo service; обычно отсутствует — пример структуры
-    send: "PING"
-    expect_regex: "PONG|PING"
-```
-
-## Архитектура
-
-- `ctfchecker/cli.py` — CLI, входная точка
-- `ctfchecker/config.py` — загрузка/валидация YAML
-- `ctfchecker/scheduler.py` — планирование и параллельный запуск
-- `ctfchecker/runner.py` — реализации типов чекеров
-- `ctfchecker/submitter.py` — отправка флагов
-- `ctfchecker/storage.py` — SQLite-логирование
-- `ctfchecker/utils.py` — сервисные утилиты
-
-## Разработка
-
-```bash
-pytest -q
-ruff check .
-mypy src
-```
-
-## Лицензия
-
-MIT — см. [LICENSE](LICENSE).
 
 
-## Уведомления в Telegram
+Будут выполнены все чекеры, результаты запишутся в SQLite (checks.sqlite3).
 
-Добавлена простая интеграция через Bot API.
+🎯 Запустить конкретные задачи
+python -m ctfchecker.cli --config examples/config.yaml run exploit-1
 
-### Настройка
-1. Создай бота у @BotFather и получи `bot_token`.
-2. Узнай `chat_id` — самый простой путь: напиши что-нибудь своему боту, затем открой `https://api.telegram.org/bot<bot_token>/getUpdates` и найди `chat -> id`.
-3. В `examples/config.yaml` добавь секцию `telegram`:
+📜 Посмотреть историю запусков
+python -m ctfchecker.cli history --limit 10
 
-```yaml
+
+Пример:
+
+[5] 2025-09-23 18:42:01 | exploit-1   | OK    |   450 ms | stdout matched: CTF{****}
+[4] 2025-09-23 18:40:12 | static-1    | OK    |    20 ms | matched: CTF{****}
+[3] 2025-09-23 18:39:55 | dynamic-1   | FAIL  |  1000 ms | expect not matched
+
+🔐 Примеры задач
+
+Файл examples/config.yaml
+ содержит три демо-задачи:
+
+static-1 — проверка текста по regex
+
+exploit-1 — запуск Python-скрипта, который печатает флаг
+
+dynamic-1 — TCP-клиент, отправляет PING, ждёт PONG
+
+📂 Структура проекта
+ctf-checker/
+├── src/ctfchecker/       # исходники
+│   ├── cli.py            # CLI-интерфейс
+│   ├── scheduler.py      # планировщик задач
+│   ├── runner.py         # запуск чекеров
+│   ├── submitter.py      # отправка флагов
+│   ├── notifier.py       # уведомления в Telegram
+│   ├── storage.py        # логирование в SQLite
+│   └── config.py         # загрузка YAML-конфига
+├── examples/             # демо-задачи и эксплойты
+│   ├── config.yaml
+│   └── exploits/echo_flag.py
+├── tests/                # тесты
+├── requirements.txt      # зависимости
+├── Dockerfile            # запуск в контейнере
+└── README.md             # документация
+
+📣 Уведомления в Telegram
+
+Можно настроить нотификации о результатах.
+
+Настройка
+
+В examples/config.yaml добавь:
+
 telegram:
   bot_token: "123456:ABCDEF..."   # токен бота
-  chat_id: "123456789"            # id чата/пользователя/группы
-  notify_on: ["OK", "FAIL", "ERROR"]  # какие статусы слать
-```
+  chat_id: "123456789"            # id чата
+  notify_on: ["OK","FAIL","ERROR"]
 
-> По умолчанию отправляется простой текст (без Markdown). Длинные детали обрезаются до ~500 символов.
 
-После этого запусти:
-```bash
+После запуска:
+
 python -m ctfchecker.cli --config examples/config.yaml run-all
-```
-Бот пришлёт сообщения по завершении каждого чека.
+
+
+Бот пришлёт сообщение вида:
+
+CTF Checker
+Status: OK
+Challenge: exploit-1
+Duration: 450 ms
+Details: stdout matched: CTF{****}
+
+🐳 Запуск в Docker
+docker build -t ctfchecker .
+docker run --rm ctfchecker list
