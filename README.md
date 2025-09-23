@@ -49,19 +49,3 @@
 💡 Всегда открыт к коллаборациям по CTF, Open Source и Security-проектам!
 
 ![footer](https://capsule-render.vercel.app/api?type=waving&color=gradient&height=100&section=footer)
-
-<p align="center">
-  <img src="https://media.giphy.com/media/xTiTnqUxyWbsAXq7Ju/giphy.gif" width="600">
-</p>
-<p align="center">
-  <img src="https://media.giphy.com/media/26AHONQ79FdWZhAI0/giphy.gif" width="400">
-</p>
-<p align="center">
-  <img src="https://media.giphy.com/media/nGMnDqebzDcfm/giphy.gif" width="500">
-</p>
-<p align="center">
-  <img src="https://media.giphy.com/media/l0ExncehJzexFpRHq/giphy.gif" width="500">
-</p>
-![Activity Graph](https://github-readme-activity-graph.vercel.app/graph?username=gitububkm&theme=react-dark&hide_border=true)
-![header](https://capsule-render.vercel.app/api?type=wave&color=gradient&height=200&section=header&text=Hello%20World&fontSize=40&animation=fadeIn)
-
