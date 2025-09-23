@@ -16,8 +16,6 @@
 - 🌐 Поддержка статических/динамических чекеров  
 - 📣 Уведомления в Telegram  
 
-📸 Пример работы:
-![CTF Checker](https://via.placeholder.com/700x300?text=CTF+Checker+Demo)
 
 ---
 
@@ -53,7 +51,7 @@ MVP-платформа для аудита безопасности проект
 ---
 
 ## 🤝 Связь
-- 📫 Telegram: [@yourhandle](https://t.me/yourhandle)  
-- ✉️ Email: yourmail@example.com  
+- 📫 Telegram: [@ububkmburry](https://t.me/ububkmburry)  
+- ✉️ Email: ububkmart@gmail.com  
 
 💡 Всегда открыт к коллаборациям по CTF, Open Source и Security-проектам!
