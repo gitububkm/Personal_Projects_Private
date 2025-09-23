@@ -36,8 +36,7 @@
 </p>
 ---
 
-![Snake animation](https://github.com/gitububkm/gitububkm/blob/output/github-contribution-grid-snake.svg)
-
+![Pac-Man](https://github.com/Platane/snk/raw/output/github-contribution-grid-snake.svg?palette=github-dark&color_snake=#ffcb05&color_dots=#000000,#3d85c6,#f1c232,#6aa84f,#e69138)
 
 ## 🎯 О себе
 - 💻 Люблю писать код, который **ищет уязвимости** и автоматизирует проверки  
