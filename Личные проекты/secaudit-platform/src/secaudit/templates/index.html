@@ -1,0 +1,9 @@
+{% extends "layout.html" %}
+{% block content %}
+<h1>SecAudit Platform (MVP)</h1>
+<p>Укажи путь к проекту (локальная папка) и запусти сканер.</p>
+<form method="post" action="/scan">
+  <input type="text" name="target" placeholder="/path/to/project" style="width:420px">
+  <button type="submit">Scan</button>
+</form>
+{% endblock %}

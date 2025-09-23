@@ -1,0 +1,8 @@
+{% extends "layout.html" %}
+{% block content %}
+<h2>Scan complete</h2>
+<p><b>Target:</b> {{ target }}<br>
+<b>Total findings:</b> {{ count }}</p>
+<p><a href="/download?path={{ html_path }}">Скачать HTML отчёт</a></p>
+<p><a href="/">← Новый скан</a></p>
+{% endblock %}

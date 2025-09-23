@@ -1,0 +1,18 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "ctfchecker"
+version = "0.1.0"
+description = "CTF Checker framework (educational)"
+authors = [{name="You", email="you@example.com"}]
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+    "PyYAML>=6.0.1",
+    "requests>=2.31.0",
+]
+
+[project.scripts]
+ctfchecker = "ctfchecker.cli:main"

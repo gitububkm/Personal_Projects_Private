@@ -1,0 +1,39 @@
+global:
+  concurrency: 4
+  timeout_seconds: 30
+  submit: false
+
+submitter:
+  type: http
+  url: "https://ctf.example.com/api/flags"
+  token: "CHANGE_ME"
+
+challenges:
+  - id: static-1
+    name: "Static Regex Demo"
+    type: static
+    flag_regex: "CTF\{[A-Za-z0-9_\-]{8,64}\}"
+    # можно подсунуть текст для проверки (если не указать — возьмется демо-текст с валидным флагом)
+    sample_text: "some text with CTF{DEMO_FLAG_1234} inside"
+
+  - id: exploit-1
+    name: "Local Exploit Demo"
+    type: exploit
+    command: "python3 examples/exploits/echo_flag.py"
+    flag_regex: "CTF\{[A-Za-z0-9_\-]{8,64}\}"
+    timeout: 10
+    submit_on_success: false
+
+  - id: dynamic-1
+    name: "Dynamic Basic (TCP echo)"
+    type: dynamic-basic
+    host: "127.0.0.1"
+    port: 31337
+    send: "PING"
+    expect_regex: "PONG|PING"
+
+
+telegram:
+  bot_token: "PUT_YOUR_TOKEN_HERE"
+  chat_id: "PUT_YOUR_CHAT_ID_HERE"
+  notify_on: ["FAIL","ERROR"]  # пример: только важные статусы
