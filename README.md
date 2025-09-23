@@ -5,8 +5,6 @@
 🎓 3 курс — Информационная безопасность  
 💻 Увлекаюсь **пентестом, CTF, DevSecOps и автоматизацией аудитов**  
 🚀 Развиваю GitHub, делаю проекты «из учебных → в реальные инструменты»  
-Посетители 
-![Visitors](https://komarev.com/ghpvc/?username=gitububkm&label=Profile%20views&color=0e75b6&style=flat)
 ---
 
 ## 🔥 Мои проекты
@@ -37,8 +35,6 @@
 </p>
 ---
 
-![Pac-Man](https://github.com/Platane/snk/raw/output/github-contribution-grid-snake.svg?palette=github-dark&color_snake=#ffcb05&color_dots=#000000,#3d85c6,#f1c232,#6aa84f,#e69138)
-
 ## 🎯 О себе
 - 💻 Люблю писать код, который **ищет уязвимости** и автоматизирует проверки  
 - 🏆 Участник CTF и соревнований по безопасности  
@@ -53,8 +49,16 @@
 💡 Всегда открыт к коллаборациям по CTF, Open Source и Security-проектам!
 
 ![footer](https://capsule-render.vercel.app/api?type=waving&color=gradient&height=100&section=footer)
-
 <p align="center">
-  <img src="https://media.giphy.com/media/xUA7aZeLE2e0P7Znz2/giphy.gif" width="400">
+  <img src="https://media.giphy.com/media/xTiTnqUxyWbsAXq7Ju/giphy.gif" width="600">
+</p>
+<p align="center">
+  <img src="https://media.giphy.com/media/26AHONQ79FdWZhAI0/giphy.gif" width="400">
+</p>
+<p align="center">
+  <img src="https://media.giphy.com/media/l0ExncehJzexFpRHq/giphy.gif" width="500">
+</p>
+<p align="center">
+  <img src="https://media.giphy.com/media/nGMnDqebzDcfm/giphy.gif" width="500">
 </p>
 
