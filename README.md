@@ -11,8 +11,8 @@
 
 
 ## 🛠️ Стек технологий
-![C](<img src="https://img.shields.io/badge/C-00599C?logo=c&logoColor=white" />)
-![C++](<img src="https://img.shields.io/badge/C++-00599C?logo=c%2B%2B&logoColor=white" />)
+![C](https://img.shields.io/badge/-C-00599C?style=flat&logo=c&logoColor=white)
+![C++](https://img.shields.io/badge/-C++-00599C?style=flat&logo=c%2B%2B&logoColor=white)
 ![Python](https://img.shields.io/badge/-Python-3776AB?style=flat&logo=python&logoColor=white)
 ![FastAPI](https://img.shields.io/badge/-FastAPI-009688?style=flat&logo=fastapi&logoColor=white)
 ![Docker](https://img.shields.io/badge/-Docker-2496ED?style=flat&logo=docker&logoColor=white)
