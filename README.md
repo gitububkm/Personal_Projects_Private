@@ -1,3 +1,4 @@
+![header](https://capsule-render.vercel.app/api?type=wave&color=gradient&height=200&section=header&text=Welcome%20to%20my%20GitHub!&fontSize=40&animation=fadeIn&fontAlignY=35)
 # Personal_Projects_Private
 # 👋 Привет, я gitububkm
 
@@ -28,7 +29,7 @@
 <p align="center">
   <img src="https://github-readme-stats.vercel.app/api?username=yourname&show_icons=true&theme=radical" alt="stats" height="150"/>
 </p>
-
+![Snake animation](https://github.com/gitububkm/gitububkm/blob/output/github-contribution-grid-snake.svg)
 ---
 
 ## 🎯 О себе
@@ -45,6 +46,3 @@
 💡 Всегда открыт к коллаборациям по CTF, Open Source и Security-проектам!
 
 ![footer](https://capsule-render.vercel.app/api?type=waving&color=gradient&height=100&section=footer)
-![header](https://capsule-render.vercel.app/api?type=wave&color=gradient&height=200&section=header&text=Welcome%20to%20my%20GitHub!&fontSize=40&animation=fadeIn&fontAlignY=35)
-![Snake animation](https://github.com/gitububkm/gitububkm/blob/output/github-contribution-grid-snake.svg)
-
