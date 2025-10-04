@@ -1,0 +1,12 @@
+.env
+*.session
+dist/
+build/
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.zip
+*.exe
+.vscode/
+.idea/
