@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+{% block content %}
+<h3>Каталог</h3>
+<table border="1" cellpadding="4">
+  <tr><th>ID</th><th>Название</th><th>Цена</th><th>Остаток</th></tr>
+  {% for r in rows %}
+  <tr><td>{{ r.productid }}</td><td>{{ r.title }}</td><td>{{ r.price }}</td><td>{{ r.stock }}</td></tr>
+  {% endfor %}
+</table>
+
+{% if current_user.role.value == 'admin' %}
+<h4>Создать</h4>
+<form method="post">
+  <input type="hidden" name="action" value="create">
+  <input name="title" placeholder="Название">
+  <input name="price" placeholder="Цена">
+  <input name="stock" placeholder="Остаток">
+  <button>Добавить</button>
+</form>
+
+<h4>Обновить цену</h4>
+<form method="post">
+  <input type="hidden" name="action" value="update">
+  <input name="productid" placeholder="ID товара">
+  <input name="price" placeholder="Новая цена">
+  <button>Обновить</button>
+</form>
+
+<h4>Удалить</h4>
+<form method="post">
+  <input type="hidden" name="action" value="delete">
+  <input name="productid" placeholder="ID товара">
+  <button>Удалить</button>
+</form>
+{% endif %}
+{% endblock %}

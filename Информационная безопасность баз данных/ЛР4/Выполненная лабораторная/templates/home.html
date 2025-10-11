@@ -1,0 +1,10 @@
+{% extends "base.html" %}
+{% block content %}
+<h2>apple_store — демо сервис ЛР-4</h2>
+<ul>
+  <li><a href="{{ url_for('products') }}">Каталог (manager/admin)</a></li>
+  <li><a href="{{ url_for('orders') }}">Заказы (manager/admin)</a></li>
+  <li><a href="{{ url_for('payments') }}">Платежи (manager/admin)</a></li>
+  <li><a href="{{ url_for('my_orders') }}">Мои заказы (customer)</a></li>
+</ul>
+{% endblock %}

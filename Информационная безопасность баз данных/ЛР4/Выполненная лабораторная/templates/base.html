@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8"><title>apple_store</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+<nav>
+  <a href="{{ url_for('home') }}">Главная</a>
+  {% if current_user.is_authenticated %}
+    <span> | Вы: {{ current_user.username }} ({{ current_user.role.value }})</span>
+    <a href="{{ url_for('auth.logout') }}">Выход</a>
+  {% else %}
+    <a href="{{ url_for('auth.login') }}">Вход</a>
+    <a href="{{ url_for('auth.register') }}">Регистрация</a>
+  {% endif %}
+</nav>
+<hr>
+{% with messages = get_flashed_messages() %}
+  {% if messages %}<ul>{% for m in messages %}<li>{{ m }}</li>{% endfor %}</ul>{% endif %}
+{% endwith %}
+{% block content %}{% endblock %}
+</body>
+</html>

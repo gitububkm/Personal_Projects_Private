@@ -1,0 +1,10 @@
+{% extends "base.html" %}
+{% block content %}
+<h3>Платежи</h3>
+<table border="1" cellpadding="4">
+  <tr><th>paymentid</th><th>orderid</th><th>method</th><th>status</th><th>paid_at</th></tr>
+  {% for r in rows %}
+  <tr><td>{{ r.paymentid }}</td><td>{{ r.orderid }}</td><td>{{ r.method }}</td><td>{{ r.status }}</td><td>{{ r.paid_at }}</td></tr>
+  {% endfor %}
+</table>
+{% endblock %}

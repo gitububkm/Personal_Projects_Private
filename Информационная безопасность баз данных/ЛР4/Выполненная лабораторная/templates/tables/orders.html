@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% block content %}
+<h3>Заказы</h3>
+<table border="1" cellpadding="4">
+  <tr>
+    <th>orderid</th><th>date</th><th>status</th>
+    <th>totalsum</th><th>items</th><th>last payment</th><th>customer</th>
+  </tr>
+  {% for r in rows %}
+  <tr>
+    <td>{{ r.orderid }}</td><td>{{ r.orderdate }}</td><td>{{ r.status }}</td>
+    <td>{{ r.totalsum }}</td><td>{{ r.itemscount }}</td><td>{{ r.lastpaymentstatus }}</td>
+    <td>{{ r.customer.fullname if r.customer else '' }}</td>
+  </tr>
+  {% endfor %}
+</table>
+{% endblock %}

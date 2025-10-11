@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+{% block content %}
+<h3>Мои заказы</h3>
+{% if rows|length == 0 %}<p>Нет заказов или учётка не связана с клиентом.</p>{% endif %}
+<table border="1" cellpadding="4">
+  <tr><th>orderid</th><th>date</th><th>status</th><th>sum</th></tr>
+  {% for r in rows %}
+  <tr><td>{{ r.orderid }}</td><td>{{ r.orderdate }}</td><td>{{ r.status }}</td><td>{{ r.totalsum }}</td></tr>
+  {% endfor %}
+</table>
+{% endblock %}
