@@ -138,19 +138,29 @@ git clone https://github.com/<твой-никнейм>/lr4\_apple.git
 
 cd lr4\_apple
 
+```
+
 
 
 2\. Создание виртуального окружения
+
+```
 
 python -m venv .venv
 
 . .\\.venv\\Scripts\\Activate.ps1
 
+```
+
 
 
 3\. Установка зависимостей
 
+```
+
 pip install -r requirements.txt
+
+```
 
 
 
@@ -162,6 +172,8 @@ pip install -r requirements.txt
 
 
 
+```
+
 DB\_USER=root
 
 DB\_PASS=root
@@ -172,13 +184,17 @@ DB\_HOST=localhost
 
 SECRET\_KEY=supersecret
 
+```
+
 
 
 5\. Проверка соединения с БД
 
+```
+
 python test\_db\_connection.py
 
-
+```
 
 
 
@@ -188,9 +204,11 @@ python test\_db\_connection.py
 
 6\. Создание пользователей приложения
 
+```
+
 python init\_users.py
 
-
+```
 
 
 
@@ -208,9 +226,11 @@ cust1@example.com / cust
 
 7\. Запуск приложения
 
+```
+
 python app.py
 
-
+```
 
 
 
