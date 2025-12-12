@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useState } from "react";
+import { useEffect, useState } from "react";
 import { Link, useNavigate, useParams } from "react-router-dom";
 import dayjs from "dayjs";
 
@@ -6,7 +6,6 @@ import { commentsApi } from "../api/comments";
 import { newsApi } from "../api/news";
 import { CommentList } from "../components/CommentList";
 import { CommentForm } from "../components/forms/CommentForm";
-import { NewsForm } from "../components/forms/NewsForm";
 import { useAuth } from "../context/AuthContext";
 import { canManageComment, canManageNews } from "../lib/roleUtils";
 import type { CommentItem, NewsItem } from "../types";
@@ -21,8 +20,6 @@ export const NewsPage = () => {
   const [comments, setComments] = useState<CommentItem[]>([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
-  const [editingNews, setEditingNews] = useState(false);
-  const [savingNews, setSavingNews] = useState(false);
   const [commentError, setCommentError] = useState<string | null>(null);
 
   const load = async () => {
@@ -52,38 +49,6 @@ export const NewsPage = () => {
     void load();
   }, [newsId]);
 
-  const initialNewsForm = useMemo(() => {
-    if (!news) return undefined;
-    const body =
-      typeof news.content === "string"
-        ? news.content
-        : (news.content as Record<string, unknown>)?.body?.toString() ?? JSON.stringify(news.content);
-    return {
-      title: news.title,
-      body,
-      cover: news.cover ?? ""
-    };
-  }, [news]);
-
-  const handleUpdateNews = async (values: { title: string; body: string; cover?: string }) => {
-    if (!news) return;
-    setSavingNews(true);
-    try {
-      const payload = {
-        title: values.title.trim(),
-        content: { body: values.body.trim() },
-        cover: values.cover?.trim() || undefined
-      };
-      const updated = await newsApi.update(news.id, payload);
-      setNews(updated);
-      setEditingNews(false);
-    } catch (err) {
-      console.error(err);
-      setError("Не удалось обновить новость");
-    } finally {
-      setSavingNews(false);
-    }
-  };
 
   const handleDeleteNews = async () => {
     if (!news) return;
@@ -168,43 +133,34 @@ export const NewsPage = () => {
         ← Вернуться к списку
       </Link>
 
-      {editingNews ? (
-        <NewsForm
-          initialValues={initialNewsForm}
-          submitLabel="Сохранить изменения"
-          onSubmit={handleUpdateNews}
-          onCancel={() => setEditingNews(false)}
-          disabled={savingNews}
-        />
-      ) : (
-        <article className="card">
-          <header>
-            <h1>{news.title}</h1>
-            <p className="muted">
-              {dayjs(news.publication_date).format("DD.MM.YYYY HH:mm")} • Автор: #{news.author_id}
-            </p>
-          </header>
-          <div className="news-content">
-            <p>
-              {typeof news.content === "string"
-                ? news.content
-                : (news.content as Record<string, unknown>)?.body ??
-                  JSON.stringify(news.content, null, 2)}
-            </p>
-            {news.cover && <img src={news.cover} alt={news.title} className="news-cover" />}
+      <article className="card">
+        <header>
+          <h1>{news.title}</h1>
+          <p className="muted">
+            {dayjs(news.publication_date).format("DD.MM.YYYY HH:mm")} • Автор: #{news.author_id}
+          </p>
+        </header>
+        <div className="news-content">
+          <p>
+            {typeof news.content === "string"
+              ? news.content
+              : (news.content as Record<string, unknown>)?.body ??
+                (news.content as Record<string, unknown>)?.text ??
+                JSON.stringify(news.content, null, 2)}
+          </p>
+          {news.cover && <img src={news.cover} alt={news.title} className="news-cover" />}
+        </div>
+        {canManageCurrentNews && (
+          <div className="card-actions">
+            <Link to={`/edit-news/${news.id}`} className="btn btn-secondary">
+              Редактировать
+            </Link>
+            <button type="button" className="btn btn-danger" onClick={handleDeleteNews}>
+              Удалить
+            </button>
           </div>
-          {canManageCurrentNews && (
-            <div className="card-actions">
-              <button type="button" className="btn btn-secondary" onClick={() => setEditingNews(true)}>
-                Редактировать
-              </button>
-              <button type="button" className="btn btn-danger" onClick={handleDeleteNews}>
-                Удалить
-              </button>
-            </div>
-          )}
-        </article>
-      )}
+        )}
+      </article>
 
       <section className="stack-sm">
         <header className="section-head">

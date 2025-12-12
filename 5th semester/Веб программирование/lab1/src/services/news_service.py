@@ -6,6 +6,10 @@ from src.schemas.news import NewsCreate, NewsUpdate
 from typing import List, Optional
 from src.services.cache import SyncCacheService
 from src.tasks.notifications import notify_new_news
+from src.metrics import NEWS_CREATED_TOTAL
+import structlog
+
+logger = structlog.get_logger()
 
 class NewsService:
     def __init__(self, db: AsyncSession) -> None:
@@ -15,19 +19,24 @@ class NewsService:
         result = await self.db.execute(select(User).where(User.id == news.author_id))
         author = result.scalar_one_or_none()
         if not author or not author.is_verified_author:
+            logger.warning("News creation failed", reason="author_not_verified", author_id=news.author_id)
             return None
         
         db_news = News(**news.model_dump())
         self.db.add(db_news)
         await self.db.commit()
         await self.db.refresh(db_news)
+        
+        # Обновляем метрики
+        NEWS_CREATED_TOTAL.inc()
+        logger.info("News created", news_id=db_news.id, author_id=news.author_id)
+        
         # Отправляем фоновые уведомления о новой новости (моковые email)
         try:
             notify_new_news.delay(db_news.id)
         except Exception as exc:
             # Не блокируем основной поток, если брокер недоступен
-            import logging
-            logging.getLogger(__name__).error("notify_new_news_enqueue_failed id=%s err=%s", db_news.id, exc)
+            logger.error("Notify new news enqueue failed", news_id=db_news.id, error=str(exc))
         # Инвалидация списков новостей: достаточно не делать ничего — TTL очистит. При желании можно чистить ключи по шаблону.
         return db_news
 
@@ -56,6 +65,7 @@ class NewsService:
         cached = cache.get_news_list(skip, limit)
         if cached:
             return cached
+        
         result = await self.db.execute(select(News).offset(skip).limit(limit))
         items: List[News] = list(result.scalars().all())
         payload = [

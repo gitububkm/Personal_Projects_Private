@@ -5,6 +5,10 @@ from sqlalchemy.ext.asyncio import AsyncSession
 
 from src.models.user import User
 from src.schemas.user import UserCreate, UserUpdate
+from src.metrics import USERS_REGISTERED_TOTAL
+import structlog
+
+logger = structlog.get_logger()
 
 
 class UserService:
@@ -16,6 +20,11 @@ class UserService:
         self.db.add(db_user)
         await self.db.commit()
         await self.db.refresh(db_user)
+        
+        # Обновляем метрики
+        USERS_REGISTERED_TOTAL.inc()
+        logger.info("User registered", user_id=db_user.id, email=db_user.email)
+        
         return db_user
 
     async def get_user(self, user_id: int) -> Optional[User]:

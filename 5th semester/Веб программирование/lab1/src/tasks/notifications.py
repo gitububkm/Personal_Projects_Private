@@ -11,6 +11,7 @@ from src.database import SessionLocal
 from sqlalchemy import select
 from src.models.user import User
 from src.models.news import News
+from src.metrics import NOTIFICATIONS_SENT_TOTAL
 
 REDIS_URL = redis.Redis.from_url
 
@@ -65,6 +66,7 @@ def notify_new_news(news_id: int) -> int:
                     user.id,
                     _format_news(news),
                 )
+                NOTIFICATIONS_SENT_TOTAL.labels(type="new_news").inc()
                 sent += 1
             return sent
 
@@ -106,6 +108,7 @@ def send_weekly_digest() -> int:
                     len(news_list),
                     titles,
                 )
+                NOTIFICATIONS_SENT_TOTAL.labels(type="weekly_digest").inc()
                 sent += 1
             return sent
 
