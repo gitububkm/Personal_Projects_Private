@@ -153,10 +153,35 @@ lab1_Bardyshev_A_A/
 └── requirements.txt
 ```
 
+## Тестирование (Задание 7)
+
+Проект включает полный набор тестов с покрытием >= 60%.
+
+### Запуск тестов
+
+```bash
+# Установка зависимостей для тестирования
+pip install -r requirements.txt
+playwright install chromium
+
+# Запуск всех тестов с покрытием
+pytest
+
+# Генерация отчета о покрытии
+pytest --cov=src --cov-report=html
+```
+
+Отчет о покрытии будет в папке `htmlcov/index.html`.
+
+### Структура тестов
+
+- `tests/test_services/` - Unit тесты для сервисов (NewsService, UserService, CommentService)
+- `tests/test_routers/` - Тесты для API роутеров
+- `tests/test_e2e/` - E2E тесты с Playwright для базового флоу (создание, чтение, редактирование, удаление новостей)
+
 ## Документация
 
 - **Авторизация**: [docs/auth.md](docs/auth.md)
-- **Мониторинг**: [docs/monitoring.md](docs/monitoring.md)
 
 ## Автор
 

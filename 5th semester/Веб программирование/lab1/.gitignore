@@ -1,3 +1,4 @@
+# Python
 __pycache__/
 *.py[cod]
 *$py.class
@@ -19,19 +20,42 @@ wheels/
 .installed.cfg
 *.egg
 
-.env
-.venv
-env/
+# Virtual Environment
 venv/
+env/
 ENV/
-env.bak/
-venv.bak/
 
-.idea/
+# IDE
 .vscode/
+.idea/
 *.swp
 *.swo
 *~
 
+# Environment
+.env
+.env.local
+
+# Database
+*.db
+*.sqlite
+*.sqlite3
+
+# Logs
+logs/
+*.log
+
+# Metrics
+metrics.json
+htmlcov/
+.coverage
+.coverage.*
+.pytest_cache/
+
+# Playwright
+playwright-report/
+test-results/
+
+# OS
 .DS_Store
-task.md
+Thumbs.db
