@@ -1,0 +1,30 @@
+Owasp Mobile Top 10 — модель, которая является основной для тестирования приложений на уязвимости. Данные уязвимости применяются для оценки уровня безопасности приложений Android/IOS.
+
+Подготовка тестового стенда для тестирования Android-приложений
+Понадобится следующий набор инструментов (ссылки на скачивание предоставлены в разделе «Полезные материалы»):
+Appie (поддержка apktool, adb, dex2jar, jd-gui и т.д.)
+Genymotion.
+Diva.
+После скачивания Genymotion с официального сайта и установки ее на локальную машину, необходимо открыть меню настроек в Genymotion и ввести свои учётные данные, полученные при регистрации на сайте Genymotion (при первом запуске программа сама предложит ввести учетные данные, тип лицензии необходимо выбрать personal use for fun — он бесплатный):
+
+Затем необходимо выбрать любое устройство эмуляции (рекомендуется использовать Nexus 5). При этом также необходимо, чтобы на локальной машине был установлен VirtualBox.
+
+Необходимо установить путь adb, по которому находится Appie:
+Открыть меню настроек Genymotion
+Во вкладке ADB выбрать «Использовать специальные устройства Android SDK» («UsecustomAndroid SDK Tools»)
+Указать путь к папке sdk, которая находится в <путь_к_Appie>/bin/adt/sdk
+Задание
+Собрать стенд для пентестига Android 
+Исследовать и выполнить все кейсы в Diva Android, оформить их в отчет (со скриншотами и описанием)
+Полезные материалы
+https://manifestsecurity.com/appie/#Download
+https://www.genymotion.com/
+http://v-androide.com/obzory/emuljatory-obzory/genymotion-kak-ispolzovat-emulyator.html
+https://habr.com/ru/post/352252/
+https://owasp.org/www-project-mobile-top-10/
+https://www.apriorit.com/dev-blog/435-owasp-mobile-top-10-2017
+https://github.com/tjunxiang92/Android-Vulnerabilities/blob/master/diva-beta.apk
+https://www.virtualbox.org
+https://cisoclub.ru/testirovanie-na-proniknovenie-android-ustanovka-laboratorii/
+https://cisoclub.ru/rukovodstvo-po-ustanovke-laboratorii-dlya-pentestinga-android-i-spisok-komand-adb/
+https://dou.ua/lenta/articles/android-app-secutity-testing/
