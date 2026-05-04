@@ -1,107 +1,110 @@
 <div align="center">
 
-<img src="https://pbd.space/wp-content/uploads/2019/03/%D0%B8%D1%82%D0%BC%D0%BE.png" alt="ITMO University Logo" width="96" height="96"/>
+<img src="https://pbd.space/wp-content/uploads/2019/03/%D0%B8%D1%82%D0%BC%D0%BE.png" alt="ITMO University Logo" width="120" height="120" style="vertical-align: middle; margin-right: 20px;"/>
+
+# ITMO
+
+**Университет ИТМО, Санкт-Петербург**
 
 </div>
 
-<pre style="background:#000000;color:#33ff66;font-family:ui-monospace,SFMono-Regular,'Cascadia Mono','Segoe UI Mono',Consolas,monospace;font-size:13px;line-height:1.45;padding:20px 22px;border:1px solid #154d28;border-radius:10px;margin:16px 0;overflow-x:auto;text-align:left;">guest@itmo-fse:~$ whoami
-Bardyshev_A — студент ИТМО, профиль связан с ИБ и инженерией защищённых систем.
+Коллекция моих учебных и исследовательских проектов по информационной безопасности, веб-разработке, криптографии и системному программированию.
 
-guest@itmo-fse:~$ cat ./university/track.txt
-Репозиторий — собранные лабораторные и проекты по учёбе:
+---
 
-## 3-й семестр
-  • Операционные системы
-  • Теория информационной безопасности и методология защиты информации
+## Мои возможности
 
-## 4-й семестр
-  • Информационная безопасность баз данных — модели доступа, угрозы и контроли на уровне СУБД/приложений
-  • Основы системного программирования — практика на C, работа близко к ОС и ресурсам
+### Backend разработка
+- **FastAPI** — REST API с JWT-аутентификацией, OAuth, ролевой моделью
+- **Flask** — веб-приложения с разграничением доступа
+- **PostgreSQL + SQLAlchemy** — проектирование БД, миграции (Alembic)
+- **Redis** — кэширование, управление сессиями
+- **Celery** — фоновые задачи, уведомления, планировщики
+- **Argon2id** — криптостойкое хэширование паролей
 
-## 5-й семестр
-  • Веб-программирование — полный цикл: API (FastAPI), фронт (React/TS/Vite), Docker, тесты, мониторинг
-  • Технологии и методы программирования — Python, упаковка/утилиты, клиент–серверные задания
-  • Программно-аппаратные средства защиты информации — защищённый веб-стек с разграничением доступа
-  • Математические основы криптологии — алгоритмы, модулярная арифметика, криптопримитивы
-  • Компьютерные сети — конфигурации, диагностика, безопасность сетевого уровня (в т.ч. Cisco/Packet Tracer по материалам)
-  • Информационная безопасность БД (углубление) — Flask-приложения с политиками и защитой данных
-  • Статистические методы в инженерных исследованиях — Jupyter, данные, проверка гипотез, отчётность
-  • Математическая логика — формальные основы для дальнейших ИБ и CS курсов
-  • Английский язык — презентации и материалы по ИБ-тематике
+### Frontend разработка
+- **React + TypeScript** — современные SPA приложения
+- **Vite** — быстрая сборка и разработка
+- **Tailwind CSS** — адаптивная вёрстка
+- **Axios** — работа с REST API
+- **Web Crypto API** — криптографические операции на клиенте
 
-## 6-й семестр
-  • Технологии и безопасность блокчейна
-  • Криптографические методы обеспечения ИБ
-  • Вычислительные сети и контроль безопасности в компьютерных сетях
-  • Обеспечение ИБ мобильных устройств
-  • Организационное и правовое обеспечение ИБ
-  • Технические средства охраны
-  • Основы теории надёжности
+### Безопасность и криптография
+- Системы аутентификации и авторизации (JWT, MFA, управление сессиями)
+- Разграничение прав доступа (роли, ACL)
+- Криптографические алгоритмы (исторические шифры: Решётка Кардано, Скитала)
+- Хэширование паролей (PBKDF2, bcrypt, Argon2id)
+- Защита баз данных на уровне СУБД и приложения
+- Анализ сетевого трафика и безопасность сетей
 
-guest@itmo-fse:~$ cat ./notes.txt
-Не все отчёты сохранились из-за сбоев; в репозитории — часть работ.
+### Системное программирование
+- **C/C++** — системные утилиты, парсеры
+- Работа с сетями и протоколами
+- Анализ сетевого трафика (Wireshark)
 
-guest@itmo-fse:~$ ./show_stack.sh
-Загрузка значков стека…</pre>
+### Инфраструктура
+- **Docker & Docker Compose** — контейнеризация приложений
+- **Git** — контроль версий
+- Настройка CI/CD пайплайнов
+- Тестирование (Pytest, Httpx)
 
-<div align="center" style="background:#000000;color:#33ff66;padding:20px 16px 24px;border:1px solid #154d28;border-radius:10px;margin:12px 0;">
+### Математика и алгоритмы
+- Модульная арифметика
+- Теория чисел (НОД, системы счисления)
+- Криптографические протоколы
 
-<h3 style="color:#33ff66;font-size:1rem;font-weight:600;margin:12px 0 8px;">Языки</h3>
+---
 
-![Python](https://img.shields.io/badge/Python-000000?style=for-the-badge&logo=python&logoColor=33ff66&labelColor=000000)
-![TypeScript](https://img.shields.io/badge/TypeScript-000000?style=for-the-badge&logo=typescript&logoColor=33ff66&labelColor=000000)
-![JavaScript](https://img.shields.io/badge/JavaScript-000000?style=for-the-badge&logo=javascript&logoColor=33ff66&labelColor=000000)
-![C++](https://img.shields.io/badge/C++-000000?style=for-the-badge&logo=c%2B%2B&logoColor=33ff66&labelColor=000000)
-![C](https://img.shields.io/badge/C-000000?style=for-the-badge&logo=c&logoColor=33ff66&labelColor=000000)
+## Технологический стек
 
-<h3 style="color:#33ff66;font-size:1rem;font-weight:600;margin:12px 0 8px;">Backend</h3>
+### Языки программирования
 
-![FastAPI](https://img.shields.io/badge/FastAPI-000000?style=for-the-badge&logo=fastapi&logoColor=33ff66&labelColor=000000)
-![Flask](https://img.shields.io/badge/Flask-000000?style=for-the-badge&logo=flask&logoColor=33ff66&labelColor=000000)
-![SQLAlchemy](https://img.shields.io/badge/SQLAlchemy-000000?style=for-the-badge&logo=sqlalchemy&logoColor=33ff66&labelColor=000000)
-![Alembic](https://img.shields.io/badge/Alembic-000000?style=for-the-badge&logo=alembic&logoColor=33ff66&labelColor=000000)
-![Pydantic](https://img.shields.io/badge/Pydantic-000000?style=for-the-badge&logo=pydantic&logoColor=33ff66&labelColor=000000)
-![Uvicorn](https://img.shields.io/badge/Uvicorn-000000?style=for-the-badge&logo=uvicorn&logoColor=33ff66&labelColor=000000)
-![Celery](https://img.shields.io/badge/Celery-000000?style=for-the-badge&logo=celery&logoColor=33ff66&labelColor=000000)
+![Python](https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white)
+![TypeScript](https://img.shields.io/badge/TypeScript-007ACC?style=for-the-badge&logo=typescript&logoColor=white)
+![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)
+![C++](https://img.shields.io/badge/C++-00599C?style=for-the-badge&logo=c%2B%2B&logoColor=white)
+![C](https://img.shields.io/badge/C-A8B9CC?style=for-the-badge&logo=c&logoColor=black)
 
-<h3 style="color:#33ff66;font-size:1rem;font-weight:600;margin:12px 0 8px;">Frontend</h3>
+### Backend
 
-![React](https://img.shields.io/badge/React-000000?style=for-the-badge&logo=react&logoColor=33ff66&labelColor=000000)
-![Vite](https://img.shields.io/badge/Vite-000000?style=for-the-badge&logo=vite&logoColor=33ff66&labelColor=000000)
-![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-000000?style=for-the-badge&logo=tailwind-css&logoColor=33ff66&labelColor=000000)
-![Axios](https://img.shields.io/badge/Axios-000000?style=for-the-badge&logo=axios&logoColor=33ff66&labelColor=000000)
+![FastAPI](https://img.shields.io/badge/FastAPI-005571?style=for-the-badge&logo=fastapi&logoColor=white)
+![Flask](https://img.shields.io/badge/Flask-000000?style=for-the-badge&logo=flask&logoColor=white)
+![SQLAlchemy](https://img.shields.io/badge/SQLAlchemy-D71F00?style=for-the-badge&logo=sqlalchemy&logoColor=white)
+![Alembic](https://img.shields.io/badge/Alembic-000000?style=for-the-badge&logo=alembic&logoColor=white)
+![Pydantic](https://img.shields.io/badge/Pydantic-E92063?style=for-the-badge&logo=pydantic&logoColor=white)
+![Uvicorn](https://img.shields.io/badge/Uvicorn-498552?style=for-the-badge&logo=uvicorn&logoColor=white)
 
-<h3 style="color:#33ff66;font-size:1rem;font-weight:600;margin:12px 0 8px;">Данные и кэш</h3>
+### Frontend
 
-![PostgreSQL](https://img.shields.io/badge/PostgreSQL-000000?style=for-the-badge&logo=postgresql&logoColor=33ff66&labelColor=000000)
-![Redis](https://img.shields.io/badge/Redis-000000?style=for-the-badge&logo=redis&logoColor=33ff66&labelColor=000000)
+![React](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)
+![TypeScript](https://img.shields.io/badge/TypeScript-007ACC?style=for-the-badge&logo=typescript&logoColor=white)
+![Vite](https://img.shields.io/badge/Vite-646CFF?style=for-the-badge&logo=vite&logoColor=white)
+![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white)
+![Axios](https://img.shields.io/badge/Axios-5A29E4?style=for-the-badge&logo=axios&logoColor=white)
 
-<h3 style="color:#33ff66;font-size:1rem;font-weight:600;margin:12px 0 8px;">Наблюдаемость и логи</h3>
+### Базы данных
 
-![Prometheus](https://img.shields.io/badge/Prometheus-000000?style=for-the-badge&logo=prometheus&logoColor=33ff66&labelColor=000000)
-![Grafana](https://img.shields.io/badge/Grafana-000000?style=for-the-badge&logo=grafana&logoColor=33ff66&labelColor=000000)
-![Elasticsearch](https://img.shields.io/badge/Elasticsearch-000000?style=for-the-badge&logo=elastic&logoColor=33ff66&labelColor=000000)
-![Kibana](https://img.shields.io/badge/Kibana-000000?style=for-the-badge&logo=kibana&logoColor=33ff66&labelColor=000000)
-![Logstash](https://img.shields.io/badge/Logstash-000000?style=for-the-badge&logo=logstash&logoColor=33ff66&labelColor=000000)
+![PostgreSQL](https://img.shields.io/badge/PostgreSQL-316192?style=for-the-badge&logo=postgresql&logoColor=white)
+![Redis](https://img.shields.io/badge/Redis-DC382D?style=for-the-badge&logo=redis&logoColor=white)
 
-<h3 style="color:#33ff66;font-size:1rem;font-weight:600;margin:12px 0 8px;">Безопасность и криптография</h3>
+### Безопасность и криптография
 
-![JWT](https://img.shields.io/badge/JWT-000000?style=for-the-badge&logo=JSON%20web%20tokens&logoColor=33ff66&labelColor=000000)
-![OAuth](https://img.shields.io/badge/OAuth-000000?style=for-the-badge&logo=oauth&logoColor=33ff66&labelColor=000000)
-![Argon2](https://img.shields.io/badge/Argon2-000000?style=for-the-badge&logo=argon2&logoColor=33ff66&labelColor=000000)
+![JWT](https://img.shields.io/badge/JWT-000000?style=for-the-badge&logo=JSON%20web%20tokens&logoColor=white)
+![OAuth](https://img.shields.io/badge/OAuth-4285F4?style=for-the-badge&logo=oauth&logoColor=white)
+![Argon2](https://img.shields.io/badge/Argon2-4A90E2?style=for-the-badge&logo=argon2&logoColor=white)
+![Cryptography](https://img.shields.io/badge/Cryptography-FF6F00?style=for-the-badge&logo=cryptography&logoColor=white)
 
-<h3 style="color:#33ff66;font-size:1rem;font-weight:600;margin:12px 0 8px;">Инфраструктура и качество</h3>
+### Инструменты и инфраструктура
 
-![Docker](https://img.shields.io/badge/Docker-000000?style=for-the-badge&logo=docker&logoColor=33ff66&labelColor=000000)
-![Git](https://img.shields.io/badge/Git-000000?style=for-the-badge&logo=git&logoColor=33ff66&labelColor=000000)
-![Pytest](https://img.shields.io/badge/Pytest-000000?style=for-the-badge&logo=pytest&logoColor=33ff66&labelColor=000000)
-![Playwright](https://img.shields.io/badge/Playwright-000000?style=for-the-badge&logo=playwright&logoColor=33ff66&labelColor=000000)
-![Wireshark](https://img.shields.io/badge/Wireshark-000000?style=for-the-badge&logo=wireshark&logoColor=33ff66&labelColor=000000)
+![Docker](https://img.shields.io/badge/Docker-2496ED?style=for-the-badge&logo=docker&logoColor=white)
+![Git](https://img.shields.io/badge/Git-F05032?style=for-the-badge&logo=git&logoColor=white)
+![Celery](https://img.shields.io/badge/Celery-37814A?style=for-the-badge&logo=celery&logoColor=white)
+![Pytest](https://img.shields.io/badge/Pytest-0A9EDC?style=for-the-badge&logo=pytest&logoColor=white)
+![Wireshark](https://img.shields.io/badge/Wireshark-1679A7?style=for-the-badge&logo=wireshark&logoColor=white)
 
-<h3 style="color:#33ff66;font-size:1rem;font-weight:600;margin:12px 0 8px;">Аналитика и моделирование</h3>
+---
 
-![Jupyter](https://img.shields.io/badge/Jupyter-000000?style=for-the-badge&logo=jupyter&logoColor=33ff66&labelColor=000000)
-![NumPy](https://img.shields.io/badge/NumPy-000000?style=for-the-badge&logo=numpy&logoColor=33ff66&labelColor=000000)
-![Pandas](https://img.shields.io/badge/Pandas-000000?style=for-the-badge&logo=pandas&logoColor=33ff66&labelColor=000000)
+## Примечания
 
-</div>
+Не все отчёты и проекты сохранились из-за технических неполадок. В репозитории представлена только часть выполненных работ.
+---
