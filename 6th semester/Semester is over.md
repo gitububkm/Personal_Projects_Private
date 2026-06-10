@@ -1,1 +1,0 @@
-Semester is over
